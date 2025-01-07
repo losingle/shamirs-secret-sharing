@@ -133,7 +133,7 @@ export function split (input, options) {
     throw new RangeError(`Threshold must be 0 < threshold <= ${options.shares}.`)
   }
 
-  if (options.random !== null && options.random !== undefined) {
+  if (options.random !== null && options.random !== undefined && typeof options.random !== 'function') {
     throw new TypeError('Expecting random to be a function')
   }
 
